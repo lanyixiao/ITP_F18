@@ -1,0 +1,173 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _3rdASMDemo2018
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //creating an array that stores our definitions
+            string[] definitions = new string[5];
+            definitions[0] = "zero";
+            definitions[1] = "one";
+            definitions[0] = "zero";
+            definitions[0] = "zero";
+            definitions[0] = "zero";
+
+            //create an array of terms
+            string[] terms = new string[5];
+            terms[0] = "0";
+            terms[1] = "1";
+            terms[2] = "2";
+            terms[3] = "3";
+            terms[4] = "4";
+
+            //creat int to told index position
+            int indexPositon;
+
+            //create a variable to store user input
+            string userInput;
+
+            //create a variable to store users attempts
+            int attempts = 0;
+
+            //create a variable to track correct answers
+            int correct = 0;
+
+            //create a variable to run the while loop
+            bool appRunning = true;
+
+            //instantiate a random NO.
+            Random myRandom = new Random();
+
+
+            //create a while loop to run the app
+            while(appRunning)
+            {
+                /*clear the console and select a new random NO.
+                 */
+                indexPositon = myRandom.Next(definitions.Length);
+
+                //show the user how many attempts and correct answers they've made
+                Console.WriteLine("attempts: " + attempts);
+                Console.WriteLine("correct: " + correct);
+
+                //ask for userInput and present the first term
+                Console.WriteLine("\nwhat's the term referenced by the definitions below?\n");
+                Console.WriteLine(definitions[indexPositon]);
+
+                //take user input and store the value
+                userInput = Console.ReadLine();
+
+                /*create a branching state to parse user input 
+                 * and reference the terms array
+                 * to determine if answers provided are correct or incorrect*/
+                switch(indexPositon)
+                {
+                    case 0:
+                        if (userInput == "0")
+                        {
+                            Console.Clear();
+                            Console.WriteLine("correct, just press [ENTER] to continue!");
+                            attempts++;
+                            correct++;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("uh oh, try again, just press [ENTER] to continue!");
+                            attempts++;
+                            
+                        }
+                        break;
+
+                    case 1:
+                        if (userInput == "1")
+                        {
+                            Console.Clear();
+                            Console.WriteLine("correct, just press [ENTER] to continue!");
+                            attempts++;
+                            correct++;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("uh oh, try again, just press [ENTER] to continue...");
+                            attempts++;
+
+                        }
+                        break;
+
+                    case 2:
+                        if (userInput == "2")
+                        {
+                            Console.Clear();
+                            Console.WriteLine("correct!, just press [ENTER] to continue!");
+                            attempts++;
+                            correct++;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("uh oh, try again, just press [ENTER] to continue...");
+                            attempts++;
+
+                        }
+                        break;
+
+                    case 3:
+                        if (userInput == "3")
+                        {
+                            Console.Clear();
+                            Console.WriteLine("correct!, just press [ENTER] to continue!");
+                            attempts++;
+                            correct++;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("uh oh, try again, just press [ENTER] to continue...");
+                            attempts++;
+
+                        }
+                        break;
+                       
+
+                    case 4:
+                        if (userInput == "4")
+                        {
+                            Console.Clear();
+                            Console.WriteLine("correct!, just press [ENTER] to continue!");
+                            attempts++;
+                            correct++;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("uh oh, try again, just press [ENTER] to continue...");
+                            attempts++;
+
+                        }
+                       
+                        break;
+
+                    //default:
+                    //    Console.Clear();
+                    //    Console.WriteLine("invali entry, just press [ENTER] to try again!");
+                    //    attempts++;
+                    //    Console.ReadLine();
+                    //    break;
+                }
+
+            }
+
+
+
+
+        }
+    }
+}
